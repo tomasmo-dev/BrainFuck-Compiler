@@ -23,7 +23,7 @@ namespace BrainFuck_Compiler
 
 
 
-            Compiler compiler = new Compiler(@"C:\Games\programs\c#\BrainFuck_Compiler\bin\Debug\net6.0\brainfucktest.BF");
+            Compiler compiler = new Compiler(@"C:\Games\programs\c#\BrainFuck_Compiler\bin\Debug\net6.0\brainfucktest.BF", print_ascii: true);
             //compiler.OptionalSaveCsFile(@"C:\Games\programs\c#\BrainFuck_Compiler\bin\Debug\net6.0\cscodeout.cs");
             //compiler.CompileToExe(@"C:\Games\programs\c#\BrainFuck_Compiler\bin\Debug\net6.0\outapp.exe");
         }

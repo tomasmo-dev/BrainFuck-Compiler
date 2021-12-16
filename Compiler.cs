@@ -104,7 +104,7 @@ namespace BF_Compiler
 
         private List<string> code = new();  // Each member of array is one line of code
 
-        public static readonly char[] ValidChars = { '+', '-', '[', ']', ',', '.', '<', '>', ';' };
+        public static readonly char[] ValidChars = { '+', '-', '[', ']', ',', '.', '<', '>', ';', ':' };
 
         private string csCodeConverted;
 
@@ -287,8 +287,32 @@ namespace BF_Compiler
                         }
                         else
                         {
-                            Console.WriteLine(printAscii ? stack[stackPointer] : (char)stack[stackPointer]);
+                            if (printAscii)
+                            {
+                                Console.WriteLine((char)stack[stackPointer]);
 
+                            }
+                            else
+                            {
+                                Console.WriteLine(stack[stackPointer]);
+                            }
+
+                        }
+
+                        break;
+
+                    case ':':
+                        if (!runtime)
+                        {
+                            // make something
+                        }
+
+                        else
+                        {
+                            if (printAscii)
+                            {
+                                File.AppendAllText("bf-file.txt", Encoding.ASCII.GetString(new byte[] { stack[stackPointer] }));
+                            }
                         }
 
                         break;
